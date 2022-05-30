@@ -45,9 +45,9 @@ Ex: `let x: number = 5;`
 Ex: `let abc: string = 'abc';`
 
 - void: existe apenas para indicar a ausência de um valor, como em uma função sem valor retornado.
-Ex: `function sayHelloWorld(): void {
+Ex: ```function sayHelloWorld(): void {
        console.log("Hello World!");
-     }`
+     }```
 
 - null e undefined: são subtipos de todos os outros tipos.
 `let nullValue = null;`
@@ -60,33 +60,39 @@ Ex: array de strings: `let names: string[] = ["Mary Joe", "Alan Joe"];`
 - Array de objetos
 Ex:
 
-`const book = {
+```
+const book = {
   title: string,
   author: string,
   price: number
-}`
+}
+```
 
 array de books = `book[]`
 
-- Type Unions
+- Type Unions:
 Type Unions (união de tipos) é uma forma de declarar que um objeto é um tipo formado a partir de dois ou mais outros tipos, representando valores que podem ser qualquer um desses tipos. Para isso, é preciso declarar os tipos esperados separados por barras.
 
 // A função abaixo pode receber tanto um número
 // quanto uma string.
+```
 function retornarCPF(cpf: number | string){
   console.log("Seu CPF é: " + cpf);
 }
+```
 
 ## Interfaces
 
 A Interface é utilizada para declarar a forma de um objeto, nomear e parametrizar os tipos do objeto e compor tipos de objetos nomeados existentes em novos. São uma forma eficiente de definir um "contrato de código", ou seja, aquilo que você espera que seja implementado dentro do seu código.
 Por exemplo, se quiséssemos criar uma interface que define as propriedades e métodos de uma pessoa funcionária, seria assim:
 
-`interface Employee {
-    firstName: string;
-    lastName: string;
-    fullName(): string;
-}`
+```
+interface Employee {
+  firstName: string;
+  lastName: string;
+  fullName(): string;
+}
+```
 
 ## Generics
 
@@ -101,7 +107,8 @@ Elas são muito úteis quando temos um conjunto de valores que determinado tipo 
 
 Por padrão, uma enum é baseada em números. Os valores começam de zero e para cada opção é assinalado um número incrementado por 1, assim como os índices de um array.
 
-`enum StatusCodes {
+```
+enum StatusCodes {
   OK = 200,
   BadRequest = 400,
   Unauthorized,
@@ -114,9 +121,10 @@ const ok = StatusCodes.OK;
 const indiceOk = StatusCodes["OK"];
 const stringBadRequest = StatusCodes[400];
 
-console.log(ok); //saída: 200
+console.log(ok); //saída: 200`
 console.log(indiceOk); //saída: 200
-console.log(stringBadRequest); //saída: BadRequest`
+console.log(stringBadRequest); //saída: BadRequest
+```
 
 ## Testes em Typescript
 
@@ -125,14 +133,16 @@ console.log(stringBadRequest); //saída: BadRequest`
 Depois de instalado, deveremos criar um arquivo de configurações para o Jest: 
 
 jest.config.js
-  `module.exports = {
+  ```
+  module.exports = {
     roots: ['<rootDir>/src'],
     transform: {
       '^.+\\.tsx?$': 'ts-jest',
     },
     testRegex: '(/__tests__/.*|(\\.|/)(test|spec))\\.tsx?$',
     moduleFileExtensions: ['ts', 'js', 'json'],
-  }`
+  }
+  ```
 
 Roots -> Aqui, você deve dizer aonde ficará o código fonte da sua aplicação.
 testRegex -> Aqui, será o regex que o jest irá utilizar para identificar se um arquivo é, ou não é, um arquivo que contém testes. Isso, porque não dizemos ao jest qual arquivo executar. Por padrão, ele sempre irá executar todos os testes que ele conseguir achar.
@@ -146,6 +156,8 @@ nome-do-teste.spec.ts
 
 
 package.json
-`  "scripts": {
-    "test": "jest"
-  }`
+```  
+"scripts": {
+  "test": "jest"
+}
+```
