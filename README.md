@@ -38,26 +38,29 @@ Ao rodarmos esse comando, será verificado o conteúdo do arquivo nomeDoArquivo.
 - boolean: recebe true ou false
 Ex: `let yes: boolean = true;`
 
-- number: recebe valores numéricos e, assim como no JavaScript, todos são valores de ponto flutuante.
+- number: recebe valores numéricos e, assim como no JavaScript, todos são valores de ponto flutuante.<br>
 Ex: `let x: number = 5;`
 
-- string: recebe uma sequência de caracteres armazenados como unidades de código UTF-16 Unicode.
+- string: recebe uma sequência de caracteres armazenados como unidades de código UTF-16 Unicode.<br>
 Ex: `let abc: string = 'abc';`
 
-- void: existe apenas para indicar a ausência de um valor, como em uma função sem valor retornado.
-Ex: ```function sayHelloWorld(): void {
-       console.log("Hello World!");
-     }```
+- void: existe apenas para indicar a ausência de um valor, como em uma função sem valor retornado.<br>
+Ex: 
+```
+function sayHelloWorld(): void {
+  console.log("Hello World!");
+}
+```
 
-- null e undefined: são subtipos de todos os outros tipos.
-`let nullValue = null;`
+- null e undefined: são subtipos de todos os outros tipos.<br>
+`let nullValue = null;`<br>
 `let undefinedValue = undefined;`
 
-- Arrays
+- Arrays<br>
 Ex: array de strings: `let names: string[] = ["Mary Joe", "Alan Joe"];`
     array de numbers: `let n: number[] = [1, 2, 3];`
 
-- Array de objetos
+- Array de objetos<br>
 Ex:
 
 ```
@@ -149,9 +152,9 @@ testRegex -> Aqui, será o regex que o jest irá utilizar para identificar se um
 
 Esse é um Regex “padrão”, ele irá buscar por arquivos que contenham o formato:
 
-Nome-do-teste.test.tsx
-Nome-do-teste.test.ts
-Nome-do-teste.spec.tsx
+Nome-do-teste.test.tsx<br>
+Nome-do-teste.test.ts<br>
+Nome-do-teste.spec.tsx<br>
 nome-do-teste.spec.ts
 
 
