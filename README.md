@@ -22,8 +22,8 @@ seguinte comando:
 Ao rodarmos esse comando, será verificado o conteúdo do arquivo nomeDoArquivo.ts e, caso nenhum problema seja encontrado, um novo arquivo será criado com o nome nomeDoArquivo.js e contendo o código compilado para JavaScript.
 
 ## Typescript com node
--Adiciona pacote npm de declarações de tipos para os módulos padrões do Node: `npm install -D @types/node`
--Instala o pacote de utilitários que vai nos ajudar a executar o servidor de desenvolvimento, escrito em TypeScript, diretamente no terminal, sem necessidade de compilarmos o código em JavaScript, além de reiniciar o servidor a cada alteração que fizermos, sem a necessidade de encerrarmos o processo e o iniciarmos novamente.:`npm install -D ts-node-dev`
+- Adiciona pacote npm de declarações de tipos para os módulos padrões do Node: `npm install -D @types/node`
+- Instala o pacote de utilitários que vai nos ajudar a executar o servidor de desenvolvimento, escrito em TypeScript, diretamente no terminal, sem necessidade de compilarmos o código em JavaScript, além de reiniciar o servidor a cada alteração que fizermos, sem a necessidade de encerrarmos o processo e o iniciarmos novamente.:`npm install -D ts-node-dev`
 
 ## Instalando o Express
 - Instala o pacote express: `npm install express`
@@ -57,8 +57,9 @@ function sayHelloWorld(): void {
 `let undefinedValue = undefined;`
 
 - Arrays<br>
-Ex: array de strings: `let names: string[] = ["Mary Joe", "Alan Joe"];`
-    array de numbers: `let n: number[] = [1, 2, 3];`
+Ex: <br>
+  array de strings: `let names: string[] = ["Mary Joe", "Alan Joe"];`<br>
+  array de numbers: `let n: number[] = [1, 2, 3];`
 
 - Array de objetos<br>
 Ex:
