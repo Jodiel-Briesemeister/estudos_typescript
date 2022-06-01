@@ -165,3 +165,75 @@ package.json
   "test": "jest"
 }
 ```
+
+## Funções de simulação
+
+- jest.fn -> Retorna uma nova, não utilizada função de simulação, a partir dela podemos implementar novas funcionalidades
+e resultados.
+Ex:
+```
+const mockFn = jest.fn();
+mockFn();
+expect(mockFn).toHaveBeenCalled();
+```
+
+- mockReturnValue -> faz a função retornar o valor escolhido.
+- mockReturnValueOnce -> retorna o valor escolhido apenas uma vez.
+Ex: 
+```
+const myMock = jest.fn();
+console.log(myMock());
+// > undefined
+
+myMock.mockReturnValueOnce(10).mockReturnValueOnce('x').mockReturnValue(true);
+
+console.log(myMock(), myMock(), myMock(), myMock(), myMock(), myMock());
+// > 10, 'x', true, true, true, true
+```
+
+- jest.spyOn -> Cria uma função de simulação semelhante ao jest.fn porém esta usamos para mockar objetos com funções.
+Ex:
+`jest.spyOn(object, methodName)`
+
+```
+const video = {
+  play() {
+    return true;
+  },
+};
+
+module.exports = video;
+```
+```
+const video = require('./video');
+
+test('plays video', () => {
+  const spy = jest.spyOn(video, 'play');
+  const isPlaying = video.play();
+
+  expect(spy).toHaveBeenCalled();
+  expect(isPlaying).toBe(true);
+
+  spy.mockRestore(); // Importante lembrar de sempre limpar os mocks ao final.
+});
+```
+- jest.mock -> Pode ser utilizada quando o código que queremos testar depende de um módulo e este deve ser mockado.
+Ex:
+```
+jest.mock('../abc');
+
+const banana = require('../abc'); // abc virá mockado.
+
+abc(); // retornará 'undefined' porque a função estará mockada.
+```
+Ex 2:
+```
+jest.mock('../moduleName', () => {
+  return jest.fn(() => 42);
+});
+
+
+// Executando a função especificada como segundo argumento ao 'jest.mock'.
+const moduleName = require('../moduleName');
+moduleName(); // retornará '42';
+```
