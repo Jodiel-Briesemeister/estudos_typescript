@@ -169,7 +169,7 @@ package.json
 ## Funções de simulação
 
 - jest.fn -> Retorna uma nova, não utilizada função de simulação, a partir dela podemos implementar novas funcionalidades
-e resultados.
+e resultados.<br>
 Ex:
 ```
 const mockFn = jest.fn();
@@ -178,7 +178,7 @@ expect(mockFn).toHaveBeenCalled();
 ```
 
 - mockReturnValue -> faz a função retornar o valor escolhido.
-- mockReturnValueOnce -> retorna o valor escolhido apenas uma vez.
+- mockReturnValueOnce -> retorna o valor escolhido apenas uma vez.<br>
 Ex: 
 ```
 const myMock = jest.fn();
@@ -191,7 +191,7 @@ console.log(myMock(), myMock(), myMock(), myMock(), myMock(), myMock());
 // > 10, 'x', true, true, true, true
 ```
 
-- jest.spyOn -> Cria uma função de simulação semelhante ao jest.fn porém esta usamos para mockar objetos com funções.
+- jest.spyOn -> Cria uma função de simulação semelhante ao jest.fn porém esta usamos para mockar objetos com funções.<br>
 Ex:
 `jest.spyOn(object, methodName)`
 
@@ -217,7 +217,7 @@ test('plays video', () => {
   spy.mockRestore(); // Importante lembrar de sempre limpar os mocks ao final.
 });
 ```
-- jest.mock -> Pode ser utilizada quando o código que queremos testar depende de um módulo e este deve ser mockado.
+- jest.mock -> Pode ser utilizada quando o código que queremos testar depende de um módulo e este deve ser mockado.<br>
 Ex:
 ```
 jest.mock('../abc');
